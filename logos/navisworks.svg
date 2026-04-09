@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs><linearGradient id="ng" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4A93E8"/><stop offset="100%" stop-color="#1B5AB5"/></linearGradient></defs>
+  <rect width="48" height="48" rx="8" fill="url(#ng)"/>
+  <text x="24" y="34" text-anchor="middle" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700">N</text>
+</svg>
