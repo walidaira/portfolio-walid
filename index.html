@@ -115,7 +115,7 @@ footer{padding:20px clamp(24px,4vw,48px);display:flex;justify-content:space-betw
 </head>
 <body>
 <div class="topbar" id="topbar"><span class="monogram" onclick="backToMain()">W<span>D</span></span><button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button></div>
-<div class="ov-menu" id="ovMenu"><a href="#" onclick="backToMain();closeM();return false">Accueil</a><a href="#cv" onclick="backToMain();closeM()">CV</a><a href="#skills" onclick="backToMain();closeM()">Compétences</a><a href="#projects" onclick="backToMain();closeM()">Projets</a><a href="#contact" onclick="backToMain();closeM()">Contact</a></div>
+<div class="ov-menu" id="ovMenu"><a href="#" onclick="goTo('home');return false">Accueil</a><a href="#cv" onclick="goTo('cv');return false">CV</a><a href="#skills" onclick="goTo('skills');return false">Compétences</a><a href="#projects" onclick="goTo('projects');return false">Projets</a><a href="#contact" onclick="goTo('contact');return false">Contact</a></div>
 
 <div id="mainContent">
 <section class="hero" id="home"><div class="hero-img"></div><div class="hero-content">
@@ -192,6 +192,7 @@ function navP(d){openP((cur+d+P.length)%P.length)}
 var tb=document.getElementById('topbar');window.addEventListener('scroll',function(){tb.classList.toggle('scrolled',scrollY>60)},{passive:true});
 var mbtn=document.getElementById('menuBtn'),ov=document.getElementById('ovMenu');mbtn.addEventListener('click',function(){mbtn.classList.toggle('active');ov.classList.toggle('open');document.body.style.overflow=ov.classList.contains('open')?'hidden':''});
 function closeM(){mbtn.classList.remove('active');ov.classList.remove('open');document.body.style.overflow=''}
+function goTo(id){var pp=document.getElementById('projectPage');if(pp.classList.contains('open')){pp.classList.remove('open');document.getElementById('mainContent').classList.remove('hidden')}closeM();setTimeout(function(){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});else window.scrollTo({top:0,behavior:'smooth'})},50)}
 var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})},{threshold:.06,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
 document.querySelectorAll('.proj-filter').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.proj-filter').forEach(function(x){x.classList.remove('active')});b.classList.add('active');var f=b.dataset.filter;document.querySelectorAll('.p-slide').forEach(function(s){if(f==='all'||s.dataset.cat===f){s.classList.remove('hidden')}else{s.classList.add('hidden')}})})});
 document.querySelectorAll('.p-slide').forEach(function(s){s.addEventListener('click',function(){openP(parseInt(s.dataset.proj))})});
