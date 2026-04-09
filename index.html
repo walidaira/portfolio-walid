@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Walid Daira — Expert BIM & Synthèse Architecturale</title>
+<meta name="description" content="Walid Daira, architecte et expert BIM. Synthèse architecturale, coordination multi-lots, automatisation pyRevit/Dynamo. Valenciennes, France.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◈</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f0eeeb;--bg2:#faf9f7;--text:#1a1816;--muted:#6b6860;--muted2:#9a978f;--accent:#2563eb;--accent2:#3b82f6;--green:#059669;--light:#dbd8d2;--border:rgba(0,0,0,.06);--font:'Outfit',sans-serif;--ease:cubic-bezier(.22,1,.36,1);--radius:10px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:15px;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:var(--text);text-decoration:none;transition:color .3s}a:hover{color:var(--accent)}::selection{background:var(--accent);color:#fff}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}.rv.vis{opacity:1;transform:translateY(0)}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:22px clamp(24px,4vw,48px);transition:all .5s}
+.topbar.scrolled{background:rgba(240,238,235,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
+.monogram{font-size:1.2rem;font-weight:700;letter-spacing:2px;color:var(--text);cursor:pointer}.monogram span{color:var(--accent)}
+.menu-btn{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:8px}.menu-btn span{width:24px;height:1.5px;background:var(--text);display:block;transition:transform .3s,opacity .3s}
+.menu-btn.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}.menu-btn.active span:nth-child(2){opacity:0}.menu-btn.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.ov-menu{position:fixed;inset:0;z-index:99;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:28px;opacity:0;pointer-events:none;transition:opacity .4s}.ov-menu.open{opacity:1;pointer-events:all}
+.ov-menu a{font-size:clamp(1.6rem,3.5vw,2.8rem);font-weight:300;letter-spacing:4px;color:var(--text);transition:color .3s,letter-spacing .4s}.ov-menu a:hover{color:var(--accent);letter-spacing:8px}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:#e8e6e1}
+.hero-img{position:absolute;inset:0;background:url('hero-bg.jpg') center/contain no-repeat;opacity:.35}
+.hero-content{position:relative;z-index:1;padding:0 24px;max-width:700px}
+.hero-top{font-size:clamp(.6rem,1vw,.72rem);font-weight:500;letter-spacing:clamp(4px,1vw,10px);text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.hero-name{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:800;line-height:.9;letter-spacing:-2px;margin-bottom:12px}.hero-name .hl{color:var(--accent)}
+.hero-sub{font-size:.88rem;font-weight:300;color:var(--muted);max-width:460px;margin:0 auto 48px;line-height:1.7}
+.hero-links{display:flex;flex-direction:column;align-items:center;gap:20px}
+.hero-link{font-size:.72rem;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--text);display:flex;align-items:center;gap:8px;transition:color .3s,letter-spacing .3s}.hero-link:hover{color:var(--accent);letter-spacing:5px}
+#mainContent.hidden{display:none}
+.cv{padding:clamp(64px,10vh,120px) clamp(24px,4vw,48px);max-width:1400px;margin:0 auto;border-top:1px solid var(--light)}
+.cv-grid{display:grid;grid-template-columns:1fr;gap:48px}
+.cv-name{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;line-height:1;letter-spacing:-1px;margin-bottom:10px}
+.cv-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:14px;font-size:.82rem;color:var(--muted)}.cv-row a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.cv-bio{font-weight:300;font-size:.9rem;color:var(--muted);line-height:1.8;margin:16px 0;max-width:420px}
+.sec-h{font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:700;margin:28px 0 22px}
+.xp{margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--border)}
+.xp-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:2px}
+.xp-t{font-weight:700;font-size:.95rem}.xp-d{font-size:.72rem;color:var(--accent);font-weight:600;padding:3px 12px;background:rgba(37,99,235,.06);border-radius:var(--radius)}
+.xp-co{font-size:.82rem;color:var(--muted);margin-bottom:8px}.xp-desc{font-size:.84rem;color:var(--muted);line-height:1.7;text-align:justify;max-width:440px}
+.xp-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}.xp-tags span{padding:3px 10px;font-size:.6rem;border:1px solid var(--light);border-radius:var(--radius);color:var(--muted);font-weight:500;transition:all .3s}.xp-tags span:hover{border-color:var(--accent);color:var(--text)}
+.cv-photo{width:100%;object-fit:cover;border-radius:var(--radius);filter:grayscale(15%)}
+.study{margin-bottom:16px}.study-t{font-weight:700;font-size:.88rem}.study-sub{font-size:.8rem;color:var(--muted)}
+.skills{padding:clamp(64px,10vh,120px) clamp(24px,4vw,48px);max-width:1400px;margin:0 auto;border-top:1px solid var(--light)}
+.skills-grid{display:grid;grid-template-columns:1fr;gap:48px}
+.sk-t{font-size:clamp(1.2rem,2.2vw,1.6rem);font-weight:700;margin-bottom:18px}
+.sk-lv{margin-bottom:20px}.sk-lv-t{font-weight:700;font-size:.86rem;margin-bottom:4px}.sk-lv-sub{font-size:.76rem;color:var(--muted);margin-bottom:10px}
+.sk-icons{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:6px}
+.sk-i{width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:.56rem;font-weight:700;border-radius:6px;color:#fff;transition:transform .3s}.sk-i:hover{transform:scale(1.1)}
+.sk-i.bk{background:#1a1816}.sk-i.bl{background:#2563eb}.sk-i.gn{background:#16a34a}.sk-i.or{background:#ea580c}.sk-i.pu{background:#7c3aed}.sk-i.rd{background:#dc2626}
+.sk-n{font-size:.72rem;color:var(--muted)}
+.trait{margin-bottom:10px;font-size:.84rem;line-height:1.65;color:var(--muted)}.trait strong{color:var(--text);font-weight:700;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+.sk-imgs img{width:100%;margin-bottom:10px;border-radius:var(--radius);filter:grayscale(25%);transition:filter .4s}.sk-imgs img:hover{filter:grayscale(0)}
+.downloads{margin-top:20px;display:flex;gap:16px;flex-wrap:wrap}.downloads a{font-size:.76rem;font-weight:600;color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.proj-sec{padding:clamp(64px,10vh,120px) 0;border-top:1px solid var(--light)}
+.proj-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;padding:0 clamp(24px,4vw,48px);margin-bottom:36px}
+.proj-top-left .tag{font-size:.58rem;letter-spacing:5px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px}
+.proj-top-left h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;font-style:italic}
+.proj-filters{display:flex;flex-wrap:wrap;gap:6px}
+.proj-filter{padding:6px 16px;font-size:.68rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border:1.5px solid var(--light);border-radius:20px;background:none;color:var(--muted);cursor:pointer;transition:all .3s;font-family:var(--font)}.proj-filter:hover{border-color:var(--accent);color:var(--text)}.proj-filter.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.proj-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--light) transparent;padding:0 clamp(24px,4vw,48px) 20px}
+.proj-track::-webkit-scrollbar{height:3px}.proj-track::-webkit-scrollbar-thumb{background:var(--light)}
+.p-slide{flex-shrink:0;scroll-snap-align:start;width:clamp(260px,28vw,360px);cursor:pointer;position:relative;overflow:hidden;border-radius:var(--radius);transition:opacity .4s,transform .4s}
+.p-slide.hidden{opacity:0;transform:scale(.95);width:0!important;min-width:0!important;padding:0;margin:0;overflow:hidden}
+.p-slide img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:grayscale(70%) brightness(.88);transition:filter .6s var(--ease),transform .6s var(--ease)}
+.p-slide:hover img{filter:grayscale(0) brightness(1);transform:scale(1.04)}
+.p-slide-info{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,transparent 100%);transform:translateY(10px);opacity:0;transition:all .4s var(--ease)}.p-slide:hover .p-slide-info{opacity:1;transform:translateY(0)}
+.p-slide-info span{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.p-slide-info h3{font-size:1rem;color:#fff;font-weight:700;margin-top:3px}
+.p-slide-hint{font-size:.58rem;color:rgba(255,255,255,.45);margin-top:6px;letter-spacing:1px}
+/* PROJECT PAGE */
+#projectPage{display:none;min-height:100vh;padding-top:80px}#projectPage.open{display:block}
+.pp-back{display:inline-flex;align-items:center;gap:8px;padding:16px clamp(24px,4vw,48px);font-size:.72rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);cursor:pointer;transition:all .3s;background:none;border:none;font-family:var(--font)}.pp-back:hover{letter-spacing:4px}
+.pp-hero{width:100%;max-height:60vh;object-fit:cover}
+.pp-body{max-width:1200px;margin:0 auto;padding:clamp(32px,5vh,64px) clamp(24px,4vw,48px)}
+.pp-grid{display:grid;grid-template-columns:1fr;gap:40px}
+.pp-cat{font-size:.58rem;letter-spacing:4px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px}
+.pp-title{font-size:clamp(1.8rem,4vw,3rem);font-weight:800;letter-spacing:-1px;line-height:1.1;margin-bottom:8px}
+.pp-sub{font-size:.92rem;font-weight:500;color:var(--muted);margin-bottom:24px}
+.pp-desc{font-size:.9rem;color:var(--muted);line-height:1.8;text-align:justify;margin-bottom:24px}
+.pp-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:20px 0;border-top:1px solid var(--light);border-bottom:1px solid var(--light);margin-bottom:24px}
+.pp-m-lbl{font-size:.55rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted2);font-weight:600}.pp-m-val{font-size:.95rem;font-weight:700;color:var(--text);margin-top:3px}
+.pp-prog{display:flex;flex-direction:column;gap:12px;margin-bottom:24px}
+.pp-p-item{display:flex;align-items:center;gap:12px}
+.pp-p-lbl{font-size:.65rem;letter-spacing:1px;color:var(--muted);min-width:110px;text-transform:uppercase;font-weight:500}
+.pp-p-bar{flex:1;height:5px;background:var(--light);border-radius:3px;overflow:hidden}.pp-p-fill{height:100%;background:var(--accent);border-radius:3px;width:0;transition:width 1.2s var(--ease)}
+.pp-p-val{font-size:.72rem;font-weight:700;color:var(--accent);min-width:36px;text-align:right}
+.pp-contrib{font-size:.88rem;color:var(--muted);line-height:1.8;text-align:justify;margin-bottom:24px}.pp-contrib strong{color:var(--text);font-weight:700}
+.pp-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:32px}.pp-tags span{padding:5px 14px;font-size:.65rem;border:1px solid var(--light);border-radius:var(--radius);color:var(--muted);font-weight:500;transition:all .3s}.pp-tags span:hover{border-color:var(--accent);color:var(--text)}
+.pp-imgs img{width:100%;border-radius:var(--radius);margin-bottom:16px}
+.pp-nav{display:flex;justify-content:space-between;align-items:center;padding:40px clamp(24px,4vw,48px);border-top:1px solid var(--light);max-width:1200px;margin:0 auto}
+.pp-nav-btn{display:flex;align-items:center;gap:10px;background:none;border:none;cursor:pointer;font-family:var(--font);font-size:.82rem;font-weight:600;color:var(--text);transition:all .3s;padding:12px 0}.pp-nav-btn:hover{color:var(--accent)}
+.pp-nav-btn .arr{font-size:1.2rem;transition:transform .3s}.pp-nav-btn:hover .arr-l{transform:translateX(-4px)}.pp-nav-btn:hover .arr-r{transform:translateX(4px)}
+.pp-nav-label{font-size:.58rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted2);display:block}.pp-nav-title{display:block;margin-top:2px}
+.pp-nav-center{display:flex;flex-direction:column;align-items:center}
+.pp-nav-back-btn{padding:10px 24px;border:1.5px solid var(--light);border-radius:var(--radius);background:none;cursor:pointer;font-family:var(--font);font-size:.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:all .3s}.pp-nav-back-btn:hover{border-color:var(--accent);color:var(--accent)}
+.pp-counter{font-size:.6rem;color:var(--muted2);margin-top:8px;letter-spacing:1px}
+.contact{padding:clamp(64px,10vh,120px) clamp(24px,4vw,48px);max-width:1400px;margin:0 auto;border-top:1px solid var(--light)}
+.contact-grid{display:grid;grid-template-columns:1fr;gap:52px}
+.contact-t{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;font-style:italic;margin-bottom:16px}
+.contact-p{font-size:.88rem;color:var(--muted);line-height:1.75;margin-bottom:24px;max-width:420px}
+.contact-links{display:flex;flex-direction:column;gap:12px}.contact-links a{font-size:.85rem;color:var(--accent);text-decoration:underline;text-underline-offset:3px;font-weight:500}.contact-links span{font-size:.85rem;color:var(--muted)}
+.c-form{display:flex;flex-direction:column;gap:18px}.c-form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.c-form label{font-size:.6rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted2);font-weight:600;margin-bottom:4px;display:block}
+.c-form input,.c-form textarea{width:100%;background:transparent;border:none;border-bottom:1.5px solid var(--light);padding:12px 0;color:var(--text);font-family:var(--font);font-size:.9rem;outline:none;transition:border-color .3s}.c-form input:focus,.c-form textarea:focus{border-color:var(--accent)}.c-form textarea{resize:vertical;min-height:200px;line-height:1.7}
+.btn-send{align-self:flex-start;padding:16px 40px;background:var(--accent);color:#fff;border:none;font-family:var(--font);font-weight:700;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:var(--radius);transition:all .3s}.btn-send:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,99,235,.15)}.btn-send:disabled{opacity:.6}
+.form-ok{display:none;padding:24px;background:rgba(5,150,105,.06);border:1px solid var(--green);border-radius:var(--radius);text-align:center;color:var(--green);font-weight:600}.form-ok.show{display:block}
+footer{padding:20px clamp(24px,4vw,48px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.68rem;color:var(--muted2);border-top:1px solid var(--light)}footer a{color:var(--muted);text-decoration:none;margin-left:20px;font-size:.72rem}footer a:hover{color:var(--accent)}
+@media(min-width:768px){.cv-grid{grid-template-columns:1fr 1fr 260px}.skills-grid{grid-template-columns:260px 1fr 1fr}.contact-grid{grid-template-columns:1fr 1fr}.pp-grid{grid-template-columns:420px 1fr}}
+@media(min-width:1024px){.cv-grid{grid-template-columns:1fr 1fr 300px;gap:56px}.skills-grid{grid-template-columns:300px 1fr 1fr;gap:56px}}
+@media(max-width:767px){.cv-photo{max-height:380px}.p-slide{width:80vw}.pp-metrics{grid-template-columns:1fr 1fr 1fr}.c-form-row{grid-template-columns:1fr}.pp-nav{flex-wrap:wrap;gap:20px;justify-content:center}}
+</style>
+</head>
+<body>
+<div class="topbar" id="topbar"><span class="monogram" onclick="backToMain()">W<span>D</span></span><button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button></div>
+<div class="ov-menu" id="ovMenu"><a href="#" onclick="backToMain();closeM();return false">Accueil</a><a href="#cv" onclick="backToMain();closeM()">CV</a><a href="#skills" onclick="backToMain();closeM()">Compétences</a><a href="#projects" onclick="backToMain();closeM()">Projets</a><a href="#contact" onclick="backToMain();closeM()">Contact</a></div>
+
+<div id="mainContent">
+<section class="hero" id="home"><div class="hero-img"></div><div class="hero-content">
+<div class="hero-top rv">Architecte · Expert BIM · Synthèse TCE</div>
+<div class="hero-name rv">WALID<br><span class="hl">DAIRA</span></div>
+<p class="hero-sub rv">Coordination technique et architecturale de projets complexes. De l'esquisse au DOE, je structure l'information BIM pour construire sans conflit.</p>
+<div class="hero-links rv"><a href="#projects" class="hero-link">Scroll pour voir mes réalisations ↓</a><a href="#cv" class="hero-link">Cliquez ici pour voir mon CV →</a></div>
+</div></section>
+
+<section class="cv" id="cv"><div class="cv-grid">
+<div class="rv"><div class="cv-name">WALID DAIRA</div><div class="cv-row"><div><a href="mailto:walidaira47@gmail.com">walidaira47@gmail.com</a><br>Valenciennes, France</div><div style="text-align:right">+33 7 44 50 54 27<br><a href="https://linkedin.com/in/walid-daira-584441180" target="_blank">linkedin</a></div></div><div class="cv-row"><div>Nationalité : Belge<br>Français, <b>Anglais</b></div></div><p class="cv-bio">Passionné par la coordination technique, j'utilise le BIM comme outil de précision architecturale. Chaque conflit détecté en maquette est un problème évité sur chantier.</p><div class="sec-h">études</div><div class="study"><div class="study-t">Architecte diplômé</div><div class="study-sub">Formation en architecture et urbanisme</div></div><div class="study"><div class="study-t">Spécialisation BIM</div><div class="study-sub">Coordination, modélisation paramétrique, automatisation</div></div></div>
+<div class="rv"><div class="sec-h">expérience</div><div class="xp"><div class="xp-head"><span class="xp-t">Consultant BIM & Synthèse</span><span class="xp-d">2025 — Présent</span></div><div class="xp-co">Azaléo → CAPINGELEC — Chartres</div><p class="xp-desc">Responsable de synthèse sur NOVONORDISK NNP6. Coordination de 12 lots, clash detection Navisworks, suivi BIM 360.</p><div class="xp-tags"><span>Revit</span><span>Navisworks</span><span>BIM 360</span><span>Synthèse TCE</span></div></div><div class="xp"><div class="xp-head"><span class="xp-t">Coordinateur BIM</span><span class="xp-d">2022 — 2025</span></div><div class="xp-co">Projets tertiaires & industriels</div><p class="xp-desc">Processus BIM ESQ→DOE, conventions, formation équipes, interfaces multi-lots.</p><div class="xp-tags"><span>Convention BIM</span><span>IFC</span><span>Solibri</span></div></div><div class="xp"><div class="xp-head"><span class="xp-t">BIM Manager / Modeleur</span><span class="xp-d">2018 — 2022</span></div><div class="xp-co">Agences d'architecture</div><p class="xp-desc">Modélisation avancée, familles paramétriques, pyRevit/Dynamo, QC livrables.</p><div class="xp-tags"><span>pyRevit</span><span>Dynamo</span><span>Python</span><span>Revit API</span></div></div></div>
+<div class="rv"><img src="https://picsum.photos/300/460?random=90" alt="Walid Daira" class="cv-photo" loading="lazy"></div>
+</div></section>
+
+<section class="skills" id="skills"><div class="skills-grid">
+<div class="rv"><div class="sk-imgs"><img src="https://picsum.photos/300/200?random=91" alt="BIM" loading="lazy"><img src="https://picsum.photos/300/200?random=92" alt="Clash" loading="lazy"><img src="https://picsum.photos/300/180?random=93" alt="Navisworks" loading="lazy"></div><div class="downloads"><a href="#">CV — FR</a><a href="#">CV — EN</a><a href="#">Portfolio</a></div></div>
+<div class="rv"><div class="sk-t">logiciels & outils</div><div class="sk-lv"><div class="sk-lv-t">Avancé</div><div class="sk-lv-sub">Maîtrise complète, +7 ans :</div><div class="sk-icons"><div class="sk-i bl">R</div><div class="sk-i gn">N</div><div class="sk-i bk">A</div><div class="sk-i or">D</div><div class="sk-i pu">Py</div><div class="sk-i rd">PB</div></div><div class="sk-n">Revit, Navisworks, AutoCAD, Dynamo, Python/pyRevit, Power BI</div></div><div class="sk-lv"><div class="sk-lv-t">Intermédiaire</div><div class="sk-lv-sub">Utilisation régulière :</div><div class="sk-icons"><div class="sk-i bk">S</div><div class="sk-i bl">360</div><div class="sk-i gn">BB</div></div><div class="sk-n">Solibri, BIM 360/ACC, Bluebeam</div></div><div class="sk-lv"><div class="sk-lv-t">Code & API</div><div class="sk-lv-sub">Développement d'outils BIM :</div><div class="sk-icons"><div class="sk-i bk">C#</div><div class="sk-i bk">API</div><div class="sk-i pu">IP</div><div class="sk-i gn">JS</div></div><div class="sk-n">C#, Revit API, IronPython, HTML/CSS/JS, VBA</div></div></div>
+<div class="rv"><div class="sk-t">compétences & traits</div><div class="trait"><strong>solide expertise technique</strong>, normes, réglementation incendie, Eurocodes, APSAD.</div><div class="trait"><strong>créativité et rigueur</strong> dans la résolution de conflits en maquette.</div><div class="trait"><strong>excellente communication</strong> des idées complexes aux clients et collaborateurs.</div><div class="trait"><strong>vision holistique</strong> de chaque phase BIM, de l'esquisse au DOE.</div><div class="trait"><strong>automatisation</strong>, outils réduisant de 75% le temps de QC.</div><br><div class="sk-t">soft skills</div><div class="trait"><strong>coordinateur naturel</strong>, 12 lots simultanés.</div><div class="trait"><strong>formateur</strong>, transmission BIM aux équipes MOE.</div><div class="trait"><strong>adaptable</strong>, environnements multiculturels.</div></div>
+</div></section>
+
+<section class="proj-sec" id="projects"><div class="proj-top rv"><div class="proj-top-left"><div class="tag">Réalisations</div><h2><i>selected</i> projects</h2></div><div class="proj-filters"><button class="proj-filter active" data-filter="all">Tous</button><button class="proj-filter" data-filter="pharma">Pharma</button><button class="proj-filter" data-filter="tertiaire">Tertiaire</button><button class="proj-filter" data-filter="dev">Dev BIM</button><button class="proj-filter" data-filter="logistique">Logistique</button></div></div>
+<div class="proj-track rv">
+<div class="p-slide" data-cat="pharma" data-proj="0"><img src="https://picsum.photos/360/480?random=94" alt="NNP6" loading="lazy"><div class="p-slide-info"><span>Industrie Pharma</span><h3>NOVONORDISK NNP6</h3><div class="p-slide-hint">cliquez pour le détail →</div></div></div>
+<div class="p-slide" data-cat="tertiaire" data-proj="1"><img src="https://picsum.photos/360/480?random=95" alt="Bureaux" loading="lazy"><div class="p-slide-info"><span>Tertiaire</span><h3>Bureaux R+7</h3><div class="p-slide-hint">cliquez pour le détail →</div></div></div>
+<div class="p-slide" data-cat="logistique" data-proj="2"><img src="https://picsum.photos/360/480?random=96" alt="Logistique" loading="lazy"><div class="p-slide-info"><span>Logistique</span><h3>Plateforme 25k m²</h3><div class="p-slide-hint">cliquez pour le détail →</div></div></div>
+<div class="p-slide" data-cat="dev" data-proj="3"><img src="https://picsum.photos/360/480?random=97" alt="QC" loading="lazy"><div class="p-slide-info"><span>Dev BIM</span><h3>Suite QC automatisée</h3><div class="p-slide-hint">cliquez pour le détail →</div></div></div>
+<div class="p-slide" data-cat="tertiaire" data-proj="4"><img src="https://picsum.photos/360/480?random=98" alt="Résidence" loading="lazy"><div class="p-slide-info"><span>Résidentiel</span><h3>120 logements R+8</h3><div class="p-slide-hint">cliquez pour le détail →</div></div></div>
+<div class="p-slide" data-cat="dev" data-proj="5"><img src="https://picsum.photos/360/480?random=99" alt="Dashboard" loading="lazy"><div class="p-slide-info"><span>Data BIM</span><h3>Dashboard Power BI</h3><div class="p-slide-hint">cliquez pour le détail →</div></div></div>
+</div></section>
+
+<section class="contact" id="contact"><div class="contact-grid">
+<div class="rv"><div class="contact-t">Un projet BIM ? Parlons-en.</div><p class="contact-p">Disponible pour missions de coordination BIM, synthèse architecturale et technique.</p><div class="contact-links"><a href="mailto:walidaira47@gmail.com">walidaira47@gmail.com</a><a href="tel:+33744505427">+33 7 44 50 54 27</a><a href="https://linkedin.com/in/walid-daira-584441180" target="_blank">LinkedIn</a><span>Valenciennes, France</span></div></div>
+<div class="rv"><form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="cForm" class="c-form"><input type="hidden" name="form-name" value="contact"><p style="display:none"><label>Bot:<input name="bot-field"></label></p><div class="c-form-row"><div><label>Nom</label><input type="text" name="name" placeholder="Votre nom" required></div><div><label>Email</label><input type="email" name="email" placeholder="votre@email.com" required></div></div><div><label>Sujet</label><input type="text" name="subject" placeholder="Mission BIM, collaboration..."></div><div><label>Message</label><textarea name="message" placeholder="Décrivez votre projet en détail..." required></textarea></div><button type="submit" class="btn-send">Envoyer le message</button></form><div class="form-ok" id="formOk">✓ Message envoyé. Je reviens sous 24h.</div></div>
+</div></section>
+<footer><span>© 2026 Walid Daira — Expert BIM & Synthèse</span><div><a href="https://linkedin.com/in/walid-daira-584441180" target="_blank">linkedin</a><a href="mailto:walidaira47@gmail.com">email</a></div></footer>
+</div>
+
+<div id="projectPage">
+<button class="pp-back" onclick="backToMain()">← Retour à la liste des projets</button>
+<img class="pp-hero" id="ppHero" src="" alt="">
+<div class="pp-body"><div class="pp-grid">
+<div><div class="pp-cat" id="ppCat"></div><h2 class="pp-title" id="ppTitle"></h2><div class="pp-sub" id="ppSub"></div><p class="pp-desc" id="ppDesc"></p><div class="pp-metrics" id="ppMetrics"></div><div class="pp-prog" id="ppProg"></div><p class="pp-contrib" id="ppContrib"></p><div class="pp-tags" id="ppTags"></div></div>
+<div class="pp-imgs" id="ppImgs"></div>
+</div></div>
+<div class="pp-nav">
+<button class="pp-nav-btn" onclick="navP(-1)"><span class="arr arr-l">←</span><div><span class="pp-nav-label">Précédent</span><span class="pp-nav-title" id="ppPrevT"></span></div></button>
+<div class="pp-nav-center"><button class="pp-nav-back-btn" onclick="backToMain()">↑ Retour à la liste</button><div class="pp-counter" id="ppCount"></div></div>
+<button class="pp-nav-btn" onclick="navP(1)" style="text-align:right"><div><span class="pp-nav-label">Suivant</span><span class="pp-nav-title" id="ppNextT"></span></div><span class="arr arr-r">→</span></button>
+</div>
+<footer style="padding:20px clamp(24px,4vw,48px);border-top:1px solid var(--light);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.68rem;color:var(--muted2)"><span>© 2026 Walid Daira</span><div><a href="https://linkedin.com/in/walid-daira-584441180" target="_blank" style="color:var(--muted);text-decoration:none;margin-left:20px;font-size:.72rem">linkedin</a><a href="mailto:walidaira47@gmail.com" style="color:var(--muted);text-decoration:none;margin-left:20px;font-size:.72rem">email</a></div></footer>
+</div>
+
+<script>
+const P=[
+{cat:"Industrie Pharmaceutique",title:"NOVONORDISK NNP6",sub:"Extension usine pharmaceutique — Synthèse TCE",desc:"L'extension de l'usine NOVONORDISK à Chartres représente un défi de coordination technique majeur. Dans un contexte pharmaceutique exigeant (salle blanche, ATEX), chaque réseau doit cohabiter dans des espaces contraints avec des normes strictes. La synthèse couvre l'ensemble des 12 lots techniques.",role:"Resp. Synthèse",surf:"15 000 m²",phase:"EXE → DOE",prog:[["Clashs résolus","95"],["Maquettes validées","88"]],contrib:"<strong>Contribution personnelle :</strong> Coordination complète de 12 lots. 800+ conflits résolus via Navisworks, suivi quotidien BIM 360, réunions de synthèse bimensuelles, rapports pour la MOA. Workflow de clash detection automatisé réduisant le temps de traitement de 40%.",tags:["Revit","Navisworks","BIM 360","Clash Detection","Synthèse TCE"],hero:"https://picsum.photos/1400/600?random=201",imgs:["https://picsum.photos/1000/560?random=211","https://picsum.photos/1000/560?random=212"]},
+{cat:"Tertiaire",title:"Immeuble de bureaux R+7",sub:"Coordination BIM TCE — 12 000 m²",desc:"Coordination BIM TCE sur un immeuble neuf de 12 000 m² à Lille. Convention BIM dès l'APD, gestion des interfaces CVC/Plomberie/Élec/Archi sur 8 lots. Réunions de synthèse bimensuelles jusqu'au DOE.",role:"Coord. BIM",surf:"12 000 m²",phase:"APD → DOE",prog:[["Modélisation","100"],["Coordination","92"]],contrib:"<strong>Contribution personnelle :</strong> Rédaction convention BIM, coordination sur plateforme collaborative, revue des maquettes lot par lot, détection des conflits et suivi de résolution. Formation de l'équipe MOE.",tags:["Revit","Solibri","IFC","BCF","Convention BIM"],hero:"https://picsum.photos/1400/600?random=203",imgs:["https://picsum.photos/1000/560?random=213"]},
+{cat:"Logistique & Industrie",title:"Plateforme logistique 25 000 m²",sub:"Synthèse SPK/CVC/VRD — Conformité APSAD",desc:"Synthèse des réseaux SPK, CVC et VRD sur une plateforme logistique en zone ICPE. Application stricte des normes APSAD R1 et NF EN 12845. Coordination avec bureau de contrôle et assureurs.",role:"Resp. Synthèse",surf:"25 000 m²",phase:"PRO → EXE",prog:[["Clashs résolus","91"],["Conformité APSAD","100"]],contrib:"<strong>Contribution personnelle :</strong> Synthèse complète SPK/CVC/VRD. Vérification conformité APSAD R1 et NF EN 12845. Résolution des conflits de passage entre réseaux sous dalle et en faux-plafond.",tags:["Revit","Navisworks","NF EN 12845","APSAD R1","VRD"],hero:"https://picsum.photos/1400/600?random=204",imgs:["https://picsum.photos/1000/560?random=214"]},
+{cat:"Développement BIM",title:"Suite QC automatisée",sub:"pyRevit & Dynamo — Contrôle qualité multi-catégories",desc:"Suite complète d'outils QC pour Revit : vérification paramètres partagés, conformité nommages, validation géométrique. Rapports interactifs HTML + Excel pour diffusion aux équipes.",role:"Développeur",surf:"5 scripts",phase:"Outil interne",prog:[["Couverture QC","97"],["Temps gagné","75"]],contrib:"<strong>Contribution personnelle :</strong> Conception et développement complet. Architecture modulaire Python/C# via pyRevit et Dynamo. Rapports HTML avec filtres dynamiques et export Excel automatique.",tags:["pyRevit","Dynamo","Python","C#","Revit API"],hero:"https://picsum.photos/1400/600?random=205",imgs:["https://picsum.photos/1000/560?random=215"]},
+{cat:"Résidentiel",title:"Résidence 120 logements R+8",sub:"BIM Management — Modélisation et coordination",desc:"BIM Management complet : 120 logements à Valenciennes. Modélisation architecturale R+8, 40+ familles paramétriques, processus BIM ESQ→PRO, formation MOE.",role:"BIM Manager",surf:"120 logements",phase:"ESQ → PRO",prog:[["Modélisation","100"],["Familles créées","40+"]],contrib:"<strong>Contribution personnelle :</strong> Modélisation complète Revit, familles sur mesure (menuiseries, garde-corps, façade), gabarit de projet et charte BIM. Formation de 5 personnes.",tags:["Revit","Dynamo","Familles","Formation","Gabarit"],hero:"https://picsum.photos/1400/600?random=206",imgs:["https://picsum.photos/1000/560?random=216"]},
+{cat:"Data & Visualisation",title:"Dashboard Power BI Revit",sub:"Visualisation données maquettes en temps réel",desc:"Pipeline Revit → Power BI via API et Python. 3 dashboards : avancement modélisation, taux de remplissage paramètres, alertes qualité. Suivi en temps réel sans ouvrir Revit.",role:"Développeur",surf:"3 dashboards",phase:"Livré",prog:[["Automatisation","90"],["Couverture data","85"]],contrib:"<strong>Contribution personnelle :</strong> Architecture complète extraction→transformation→visualisation. Dashboards interactifs avec filtres par projet, lot et catégorie.",tags:["Power BI","Python","Revit API","SQL","Data"],hero:"https://picsum.photos/1400/600?random=207",imgs:["https://picsum.photos/1000/560?random=217"]}
+];
+let cur=0;
+function openP(i){cur=i;const p=P[i];document.getElementById('mainContent').classList.add('hidden');document.getElementById('projectPage').classList.add('open');
+document.getElementById('ppHero').src=p.hero;document.getElementById('ppCat').textContent=p.cat;document.getElementById('ppTitle').textContent=p.title;document.getElementById('ppSub').textContent=p.sub;document.getElementById('ppDesc').textContent=p.desc;
+document.getElementById('ppMetrics').innerHTML='<div><div class="pp-m-lbl">Rôle</div><div class="pp-m-val">'+p.role+'</div></div><div><div class="pp-m-lbl">Envergure</div><div class="pp-m-val">'+p.surf+'</div></div><div><div class="pp-m-lbl">Phase</div><div class="pp-m-val">'+p.phase+'</div></div>';
+document.getElementById('ppProg').innerHTML=p.prog.map(function(x){return '<div class="pp-p-item"><span class="pp-p-lbl">'+x[0]+'</span><div class="pp-p-bar"><div class="pp-p-fill" style="width:0"></div></div><span class="pp-p-val">'+x[1]+(x[1].indexOf('+')>=0?'':'%')+'</span></div>'}).join('');
+document.getElementById('ppContrib').innerHTML=p.contrib;document.getElementById('ppTags').innerHTML=p.tags.map(function(t){return '<span>'+t+'</span>'}).join('');
+document.getElementById('ppImgs').innerHTML=p.imgs.map(function(u){return '<img src="'+u+'" alt="'+p.title+'" loading="lazy">'}).join('');
+var prev=(i-1+P.length)%P.length,next=(i+1)%P.length;document.getElementById('ppPrevT').textContent=P[prev].title;document.getElementById('ppNextT').textContent=P[next].title;document.getElementById('ppCount').textContent=(i+1)+' / '+P.length;
+window.scrollTo({top:0,behavior:'instant'});setTimeout(function(){document.querySelectorAll('#projectPage .pp-p-fill').forEach(function(bar,j){bar.style.width=p.prog[j][1]+(p.prog[j][1].indexOf('+')>=0?'':'%')})},200)}
+function backToMain(){document.getElementById('projectPage').classList.remove('open');document.getElementById('mainContent').classList.remove('hidden');setTimeout(function(){document.getElementById('projects').scrollIntoView({behavior:'smooth'})},50)}
+function navP(d){openP((cur+d+P.length)%P.length)}
+var tb=document.getElementById('topbar');window.addEventListener('scroll',function(){tb.classList.toggle('scrolled',scrollY>60)},{passive:true});
+var mbtn=document.getElementById('menuBtn'),ov=document.getElementById('ovMenu');mbtn.addEventListener('click',function(){mbtn.classList.toggle('active');ov.classList.toggle('open');document.body.style.overflow=ov.classList.contains('open')?'hidden':''});
+function closeM(){mbtn.classList.remove('active');ov.classList.remove('open');document.body.style.overflow=''}
+var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})},{threshold:.06,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+document.querySelectorAll('.proj-filter').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.proj-filter').forEach(function(x){x.classList.remove('active')});b.classList.add('active');var f=b.dataset.filter;document.querySelectorAll('.p-slide').forEach(function(s){if(f==='all'||s.dataset.cat===f){s.classList.remove('hidden')}else{s.classList.add('hidden')}})})});
+document.querySelectorAll('.p-slide').forEach(function(s){s.addEventListener('click',function(){openP(parseInt(s.dataset.proj))})});
+document.addEventListener('keydown',function(e){if(!document.getElementById('projectPage').classList.contains('open'))return;if(e.key==='ArrowLeft')navP(-1);if(e.key==='ArrowRight')navP(1);if(e.key==='Escape')backToMain()});
+var form=document.getElementById('cForm'),succ=document.getElementById('formOk');form.addEventListener('submit',function(e){e.preventDefault();var bt=form.querySelector('.btn-send');bt.textContent='Envoi...';bt.disabled=true;fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()}).then(function(r){if(r.ok){form.style.display='none';succ.classList.add('show')}}).catch(function(){form.submit()})});
+</script>
+</body>
+</html>
