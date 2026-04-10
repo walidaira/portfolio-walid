@@ -43,18 +43,17 @@ img{display:block;max-width:100%}a{color:var(--text);text-decoration:none;transi
 .xp-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}.xp-tags span{padding:3px 10px;font-size:.6rem;border:1px solid var(--light);border-radius:var(--radius);color:var(--muted);font-weight:500;transition:all .3s}.xp-tags span:hover{border-color:var(--accent);color:var(--text)}
 .cv-photo{width:100%;object-fit:cover;border-radius:var(--radius);filter:grayscale(15%)}
 .study{margin-bottom:16px}.study-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:2px}.study-t{font-weight:700;font-size:.88rem}.study-d{font-size:.72rem;color:var(--accent);font-weight:600}.study-sub{font-size:.8rem;color:var(--muted)}
-.skills{padding:clamp(64px,10vh,120px) clamp(24px,4vw,48px);max-width:1400px;margin:0 auto;border-top:1px solid var(--light)}
-.skills-grid{display:grid;grid-template-columns:1fr;gap:48px}
-.sk-t{font-size:clamp(1.2rem,2.2vw,1.6rem);font-weight:700;margin-bottom:18px}
-.sk-lv{margin-bottom:20px}.sk-lv-t{font-weight:700;font-size:.86rem;margin-bottom:4px}.sk-lv-sub{font-size:.76rem;color:var(--muted);margin-bottom:10px}
-.sk-icons{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:6px}
+.comp-list{list-style:none;padding:0;margin:0 0 4px}
+.comp-list li{font-size:.82rem;color:var(--muted);padding:2px 0 2px 14px;position:relative}.comp-list li::before{content:'—';position:absolute;left:0;color:var(--accent)}
+.soft-cat{margin-bottom:18px}.soft-cat-t{font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;margin-top:4px}
+.logo-grid{display:flex;flex-wrap:wrap;gap:10px 12px}
+.logo-item{display:flex;flex-direction:column;align-items:center;gap:4px;width:44px}
+.logo-item img{width:36px;height:36px;object-fit:contain;border-radius:6px}
+.logo-letter{width:36px;height:36px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.52rem;font-weight:700;color:#fff}
+.logo-name{font-size:.56rem;color:var(--muted);text-align:center;line-height:1.2;width:100%}
 .sk-i{width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:.56rem;font-weight:700;border-radius:6px;color:#fff;transition:transform .3s}.sk-i:hover{transform:scale(1.1)}
 .sk-i img{width:100%;height:100%;object-fit:contain;border-radius:6px}
 .sk-i.bk{background:#1a1816}.sk-i.bl{background:#A0522D}.sk-i.gn{background:#16a34a}.sk-i.or{background:#ea580c}.sk-i.pu{background:#7c3aed}.sk-i.rd{background:#dc2626}
-.sk-n{font-size:.72rem;color:var(--muted)}
-.trait{margin-bottom:10px;font-size:.84rem;line-height:1.65;color:var(--muted)}.trait strong{color:var(--text);font-weight:700;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
-.sk-imgs img{width:100%;margin-bottom:10px;border-radius:var(--radius);filter:grayscale(25%);transition:filter .4s}.sk-imgs img:hover{filter:grayscale(0)}
-.downloads{margin-top:20px;display:flex;gap:16px;flex-wrap:wrap}.downloads a{font-size:.76rem;font-weight:600;color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 .proj-sec{padding:clamp(64px,10vh,120px) 0;border-top:1px solid var(--light)}
 .proj-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;padding:0 clamp(24px,4vw,48px);margin-bottom:36px}
 .proj-top-left .tag{font-size:.58rem;letter-spacing:5px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px}
@@ -109,14 +108,14 @@ img{display:block;max-width:100%}a{color:var(--text);text-decoration:none;transi
 .btn-send{align-self:flex-start;padding:16px 40px;background:var(--accent);color:#fff;border:none;font-family:var(--font);font-weight:700;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:var(--radius);transition:all .3s}.btn-send:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,99,235,.15)}.btn-send:disabled{opacity:.6}
 .form-ok{display:none;padding:24px;background:rgba(5,150,105,.06);border:1px solid var(--green);border-radius:var(--radius);text-align:center;color:var(--green);font-weight:600}.form-ok.show{display:block}
 footer{padding:20px clamp(24px,4vw,48px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.68rem;color:var(--muted2);border-top:1px solid var(--light)}footer a{color:var(--muted);text-decoration:none;margin-left:20px;font-size:.72rem}footer a:hover{color:var(--accent)}
-@media(min-width:768px){.cv-grid{grid-template-columns:1fr 1fr 240px}.skills-grid{grid-template-columns:260px 1fr 1fr}.contact-grid{grid-template-columns:1fr 1fr}.pp-grid{grid-template-columns:420px 1fr}}
-@media(min-width:1024px){.cv-grid{grid-template-columns:1fr 1.2fr 260px;gap:56px}.skills-grid{grid-template-columns:300px 1fr 1fr;gap:56px}}
+@media(min-width:768px){.cv-grid{grid-template-columns:1fr 1fr 240px}.contact-grid{grid-template-columns:1fr 1fr}.pp-grid{grid-template-columns:420px 1fr}}
+@media(min-width:1024px){.cv-grid{grid-template-columns:1fr 1.2fr 260px;gap:56px}}
 @media(max-width:767px){.cv-photo{max-height:380px}.p-slide{width:80vw}.pp-metrics{grid-template-columns:1fr 1fr 1fr}.c-form-row{grid-template-columns:1fr}.pp-nav{flex-wrap:wrap;gap:20px;justify-content:center}}
 </style>
 </head>
 <body>
 <div class="topbar" id="topbar"><span class="monogram" onclick="backToMain()">W<span>D</span></span><button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button></div>
-<div class="ov-menu" id="ovMenu"><a href="#" onclick="goTo('home');return false">Accueil</a><a href="#cv" onclick="goTo('cv');return false">CV</a><a href="#skills" onclick="goTo('skills');return false">Compétences</a><a href="#projects" onclick="goTo('projects');return false">Projets</a><a href="#contact" onclick="goTo('contact');return false">Contact</a></div>
+<div class="ov-menu" id="ovMenu"><a href="#" onclick="goTo('home');return false">Accueil</a><a href="#cv" onclick="goTo('cv');return false">CV</a><a href="#projects" onclick="goTo('projects');return false">Projets</a><a href="#contact" onclick="goTo('contact');return false">Contact</a></div>
 
 <div id="mainContent">
 <section class="hero" id="home"><div class="hero-img"></div><div class="hero-content">
@@ -127,16 +126,67 @@ footer{padding:20px clamp(24px,4vw,48px);display:flex;justify-content:space-betw
 </div></section>
 
 <section class="cv" id="cv"><div class="cv-grid">
-<div class="rv"><div class="cv-name">WALID DAIRA</div><div class="cv-row"><div><a href="mailto:walidaira47@gmail.com">walidaira47@gmail.com</a><br>France</div><div style="text-align:right">+33 7 44 50 54 27<br><a href="https://linkedin.com/in/walid-daira-584441180" target="_blank">linkedin</a></div></div><div class="cv-row"><div>Français, <b>Anglais</b></div></div><p class="cv-bio">Fort d'une expérience diversifiée alliant compétences architecturales, techniques et BIM management, j'interviens sur des projets variés à différentes échelles. Je pilote l'implémentation du BIM de bout en bout : modélisation, coordination multi-lots, synthèse technique et architecturale, jusqu'à l'intégration des données d'exploitation.</p><div class="sec-h">formation</div><div class="study"><div class="study-head"><span class="study-t">Diplôme BIM coordinateur</span><span class="study-d">2020 — 2022</span></div><div class="study-sub">IFAPME, Bruxelles</div></div><div class="study"><div class="study-head"><span class="study-t">Master en Architecture - Patrimoine et Numérique</span><span class="study-d">2017 — 2019</span></div><div class="study-sub">Université Libre de Bruxelles</div></div><div class="study"><div class="study-head"><span class="study-t">Diplôme d'état d'architecte</span><span class="study-d">2005 — 2010</span></div><div class="study-sub">Université Badji Mokhtar, Annaba, Algérie</div></div></div>
+<div class="rv"><div class="cv-name">WALID DAIRA</div><div class="cv-row"><div><a href="mailto:walidaira47@gmail.com">walidaira47@gmail.com</a><br>France</div><div style="text-align:right">+33 7 44 50 54 27<br><a href="https://linkedin.com/in/walid-daira-584441180" target="_blank">linkedin</a></div></div><div class="cv-row"><div>Français, <b>Anglais</b></div></div><p class="cv-bio">Fort d'une expérience diversifiée alliant compétences architecturales, techniques et BIM management, j'interviens sur des projets variés à différentes échelles. Je pilote l'implémentation du BIM de bout en bout : modélisation, coordination multi-lots, synthèse technique et architecturale, jusqu'à l'intégration des données d'exploitation.</p><div class="sec-h">formation</div><div class="study"><div class="study-head"><span class="study-t">Diplôme BIM coordinateur</span><span class="study-d">2020 — 2022</span></div><div class="study-sub">IFAPME, Bruxelles</div></div><div class="study"><div class="study-head"><span class="study-t">Master en Architecture - Patrimoine et Numérique</span><span class="study-d">2017 — 2019</span></div><div class="study-sub">Université Libre de Bruxelles</div></div><div class="study"><div class="study-head"><span class="study-t">Diplôme d'état d'architecte</span><span class="study-d">2005 — 2010</span></div><div class="study-sub">Université Badji Mokhtar, Annaba, Algérie</div></div>
+
+<div class="sec-h">Compétences clés</div>
+<ul class="comp-list">
+<li>Rigueur et sens du détail</li>
+<li>Esprit d'analyse et méthode</li>
+<li>Esprit collaboratif, orienté solution</li>
+<li>Communication et coordination multi-intervenants</li>
+</ul>
+
+<div class="sec-h">Logiciels & Outils</div>
+
+<div class="soft-cat">
+<div class="soft-cat-t">Modélisation</div>
+<div class="logo-grid">
+<div class="logo-item"><img src="logos/revit.svg" alt="Revit"><span class="logo-name">Revit</span></div>
+<div class="logo-item"><div class="logo-letter" style="background:#e84d1c">AC</div><span class="logo-name">ArchiCAD</span></div>
+<div class="logo-item"><img src="logos/autocad.svg" alt="AutoCAD"><span class="logo-name">AutoCAD</span></div>
+<div class="logo-item"><div class="logo-letter" style="background:#1d75c7">3D</div><span class="logo-name">3Dsmax</span></div>
+</div>
+</div>
+
+<div class="soft-cat">
+<div class="soft-cat-t">Coordination, Synthèse & CDE</div>
+<div class="logo-grid">
+<div class="logo-item"><img src="logos/navisworks.svg" alt="Navisworks"><span class="logo-name">Navisworks</span></div>
+<div class="logo-item"><div class="logo-letter" style="background:#0057a8">DX</div><span class="logo-name">Dalux</span></div>
+<div class="logo-item"><div class="logo-letter" style="background:#f06a2b">BT</div><span class="logo-name">BIMTrack</span></div>
+<div class="logo-item"><div class="logo-letter" style="background:#00a1e4">BC</div><span class="logo-name">BIMCollab</span></div>
+<div class="logo-item"><div class="logo-letter" style="background:#e65c00">ACC</div><span class="logo-name">Autodesk ACC</span></div>
+<div class="logo-item"><div class="logo-letter" style="background:#005f9e">TC</div><span class="logo-name">Trimble</span></div>
+</div>
+</div>
+
+<div class="soft-cat">
+<div class="soft-cat-t">Automatisation & Reporting</div>
+<div class="logo-grid">
+<div class="logo-item"><img src="logos/dynamo.svg" alt="Dynamo"><span class="logo-name">Dynamo</span></div>
+<div class="logo-item"><img src="logos/python.svg" alt="Python"><span class="logo-name">Python</span></div>
+<div class="logo-item"><div class="logo-letter" style="background:#3d4f8c">pR</div><span class="logo-name">pyRevit</span></div>
+<div class="logo-item"><img src="logos/powerbi.svg" alt="Power BI"><span class="logo-name">Power BI</span></div>
+<div class="logo-item"><div class="logo-letter" style="background:#7c3aed">IFC</div><span class="logo-name">IfcOpenShell</span></div>
+<div class="logo-item"><div class="logo-letter" style="background:#1a1816">AI</div><span class="logo-name">Claude AI</span></div>
+</div>
+</div>
+
+<div class="soft-cat">
+<div class="soft-cat-t">Bureautique & Graphisme</div>
+<div class="logo-grid">
+<div class="logo-item"><div class="logo-letter" style="background:#1e6bb8">W</div><span class="logo-name">Word</span></div>
+<div class="logo-item"><div class="logo-letter" style="background:#1d6f42">X</div><span class="logo-name">Excel</span></div>
+<div class="logo-item"><div class="logo-letter" style="background:#e34c26">Id</div><span class="logo-name">InDesign</span></div>
+<div class="logo-item"><div class="logo-letter" style="background:#31a8ff">Ps</div><span class="logo-name">Photoshop</span></div>
+</div>
+</div>
+
+</div>
 <div class="rv"><div class="sec-h">expérience</div><div class="xp"><div class="xp-head"><span class="xp-t">Consultant BIM et Synthèse TCE</span><span class="xp-d">Août 2025 — Présent</span></div><div class="xp-co">Azaléo, Paris</div><div class="xp-mission"><strong>Mission :</strong> Responsable de synthèse BIM — TCE chez CAPINGELEC, Chartres</div><div class="xp-mission"><strong>Projet :</strong> Extension de l'usine NOVONORDISK NNP6 · <strong>Budget :</strong> 1 Md€ · <strong>Phases :</strong> EXE, DOE</div><div class="xp-desc"><ul><li>Coordination interdisciplinaire entre les différents lots techniques et architecturaux en parallèle avec le planning des travaux</li><li>Pilotage des réunions et workshops de synthèse en Fast Track</li><li>Détection, analyse et suivi des clashs via BIM Track</li><li>Proposition de solutions techniques et architecturales</li><li>Production des documents associés : carnets de détails, plans de calepinage, gestion des réservations GOE et SOE</li><li>Contrôle TQC : comparaison Nuage de Points / Maquette EXE et analyse des écarts</li><li>Développement de solutions d'automatisation (Dynamo, pyRevit, IFC Checker APP)</li></ul></div><div class="xp-tags"><span>Revit</span><span>Navisworks</span><span>BIM Track</span><span>Dynamo</span><span>pyRevit</span><span>Synthèse TCE</span></div></div><div class="xp"><div class="xp-head"><span class="xp-t">BIM Manager</span><span class="xp-d">Oct 2022 — Mai 2025</span></div><div class="xp-co">Fast Forward Architects & Engineers, Bruxelles</div><div class="xp-mission"><strong>Missions :</strong></div><div class="xp-desc"><ul><li>Responsable de déploiement BIM</li><li>Management des projets BIM</li><li>Synthèse technique et architecturale</li><li>Développement et optimisation des workflows de modélisation, coordination et Scan to BIM (construction neuve / rénovation lourde)</li><li>Rédaction des protocoles : conventions de modélisation, BEP, cahier des charges sous-traitants Scan to BIM</li><li>Formation et accompagnement des équipes</li><li>Développement des bibliothèques et gabarits pour tous les corps d'états</li><li>Open BIM — IFC (normes BELUX, mapping IFC, intégration des données d'exploitation)</li></ul></div><div class="xp-mission"><strong>Projets :</strong></div><div class="xp-desc"><ul><li>École IEHS EL HIKMA — 22 000 m², 45 M€, APD DCE EXE</li><li>Hôpital AZ ZENO Blankenberge Aile E — 10 000 m², EXE</li><li>BACARDI — projet mixte, 7 900 m², APS APD PC</li><li>Contrat cadre Ministère de la Défense Belge — projets divers, toutes phases (intégration données d'exploitation)</li><li>REGENT 45 — bureaux certifiés BREEAM, 7 600 m², 10 M€, APD DCE EXE</li><li>BARTHELEMY — 17 appartements, 1 800 m², APD DCE</li></ul></div><div class="xp-tags"><span>Revit</span><span>IFC</span><span>Scan to BIM</span><span>Convention BIM</span><span>BEP</span><span>Open BIM</span></div></div><div class="xp"><div class="xp-head"><span class="xp-t">Architecte BIM</span><span class="xp-d">Juin 2020 — Sept 2021</span></div><div class="xp-co">MetaForma Architettura, Bruxelles</div><div class="xp-desc">Études et suivi de chantier, conception architecturale et design d'intérieur, métrés, estimation budgétaire, rédaction des cahiers des charges.</div><div class="xp-tags"><span>Revit</span><span>AutoCAD</span><span>Conception</span><span>Suivi chantier</span></div></div><div class="xp"><div class="xp-head"><span class="xp-t">Architecte Gérant</span><span class="xp-d">Nov 2012 — Août 2017</span></div><div class="xp-co">Elite Architecture Studio, Algérie</div><div class="xp-desc">Gestion des études techniques et architecturales, concours d'architecture, dossiers d'exécution, suivi de chantiers. Projets publics : logements, bureaux de poste, aménagements urbains.</div><div class="xp-tags"><span>Architecture</span><span>Études techniques</span><span>Chantiers</span><span>Concours</span></div></div><div class="xp"><div class="xp-head"><span class="xp-t">Architecte Stagiaire</span><span class="xp-d">Sept 2010 — Sept 2012</span></div><div class="xp-co">Atelier New Concept, Algérie</div><div class="xp-desc">Concours et études de projets divers (logements collectifs, bureaux), permis de construire, exécution et suivi de chantier.</div><div class="xp-tags"><span>Architecture</span><span>Permis de construire</span><span>Suivi chantier</span></div></div></div>
 <div class="rv"><img src="https://picsum.photos/300/460?random=90" alt="Walid Daira" class="cv-photo" loading="lazy"></div>
 </div></section>
 
-<section class="skills" id="skills"><div class="skills-grid">
-<div class="rv"><div class="sk-imgs"><img src="https://picsum.photos/300/200?random=91" alt="BIM" loading="lazy"><img src="https://picsum.photos/300/200?random=92" alt="Clash" loading="lazy"><img src="https://picsum.photos/300/180?random=93" alt="Navisworks" loading="lazy"></div><div class="downloads"><a href="#">CV — FR</a><a href="#">CV — EN</a><a href="#">Portfolio</a></div></div>
-<div class="rv"><div class="sk-t">logiciels & outils</div><div class="sk-lv"><div class="sk-lv-t">Avancé</div><div class="sk-lv-sub">Maîtrise complète, +7 ans :</div><div class="sk-icons"><div class="sk-i"><img src="logos/revit.svg" alt="Revit" title="Revit"></div><div class="sk-i"><img src="logos/navisworks.svg" alt="Navisworks" title="Navisworks"></div><div class="sk-i"><img src="logos/autocad.svg" alt="AutoCAD" title="AutoCAD"></div><div class="sk-i"><img src="logos/dynamo.svg" alt="Dynamo" title="Dynamo"></div><div class="sk-i"><img src="logos/python.svg" alt="Python" title="Python/pyRevit"></div><div class="sk-i"><img src="logos/powerbi.svg" alt="Power BI" title="Power BI"></div></div><div class="sk-n">Revit, Navisworks, AutoCAD, Dynamo, Python/pyRevit, Power BI</div></div><div class="sk-lv"><div class="sk-lv-t">Intermédiaire</div><div class="sk-lv-sub">Utilisation régulière :</div><div class="sk-icons"><div class="sk-i"><img src="logos/solibri.svg" alt="Solibri" title="Solibri"></div><div class="sk-i bl">360</div><div class="sk-i gn">BB</div></div><div class="sk-n">Solibri, BIM 360/ACC, Bluebeam, Dalux, Trimble</div></div><div class="sk-lv"><div class="sk-lv-t">Code & API</div><div class="sk-lv-sub">Développement d'outils BIM :</div><div class="sk-icons"><div class="sk-i bk">C#</div><div class="sk-i bk">API</div><div class="sk-i pu">IP</div><div class="sk-i gn">JS</div></div><div class="sk-n">C#, Revit API, IronPython, HTML/CSS/JS, VBA</div></div><div class="sk-lv"><div class="sk-lv-t">Autres outils</div><div class="sk-lv-sub">Suites bureautiques & créatives :</div><div class="sk-icons"><div class="sk-i rd">Ps</div><div class="sk-i rd">Id</div><div class="sk-i bl">W</div></div><div class="sk-n">Photoshop, InDesign, Suite Office</div></div></div>
-<div class="rv"><div class="sk-t">compétences & traits</div><div class="trait"><strong>solide expertise technique</strong>, normes, réglementation incendie, Eurocodes, APSAD.</div><div class="trait"><strong>créativité et rigueur</strong> dans la résolution de conflits en maquette.</div><div class="trait"><strong>excellente communication</strong> des idées complexes aux clients et collaborateurs.</div><div class="trait"><strong>vision holistique</strong> de chaque phase BIM, de l'esquisse au DOE.</div><div class="trait"><strong>automatisation</strong>, outils réduisant de 75% le temps de QC.</div><br><div class="sk-t">soft skills</div><div class="trait"><strong>coordinateur naturel</strong>, 12 lots simultanés.</div><div class="trait"><strong>formateur</strong>, transmission BIM aux équipes MOE.</div><div class="trait"><strong>adaptable</strong>, environnements multiculturels.</div></div>
-</div></section>
 
 <section class="proj-sec" id="projects"><div class="proj-top rv"><div class="proj-top-left"><div class="tag">Réalisations</div><h2><i>selected</i> projects</h2></div><div class="proj-filters"><button class="proj-filter active" data-filter="all">Tous</button><button class="proj-filter" data-filter="pharma">Pharma</button><button class="proj-filter" data-filter="tertiaire">Tertiaire</button><button class="proj-filter" data-filter="dev">Dev BIM</button><button class="proj-filter" data-filter="logistique">Logistique</button></div></div>
 <div class="proj-track rv">
