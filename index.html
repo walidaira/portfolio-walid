@@ -83,9 +83,8 @@ img{display:block;max-width:100%}a{color:var(--text);text-decoration:none;transi
 .pp-m-lbl{font-size:.55rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted2);font-weight:600}.pp-m-val{font-size:.95rem;font-weight:700;color:var(--text);margin-top:3px}
 .pp-contrib{font-size:.88rem;color:var(--muted);line-height:1.8;text-align:justify;margin-bottom:24px}.pp-contrib strong{color:var(--text);font-weight:700}
 .pp-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:32px}.pp-tags span{padding:5px 14px;font-size:.65rem;border:1px solid var(--light);border-radius:var(--radius);color:var(--muted);font-weight:500;transition:all .3s}.pp-tags span:hover{border-color:var(--accent);color:var(--text)}
-.pp-imgs .pp-img-hero{width:100%;border-radius:var(--radius);margin-bottom:16px}
-.pp-imgs-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
-.pp-imgs-pair img{width:100%;border-radius:var(--radius);object-fit:cover;aspect-ratio:16/10}
+.pp-img-main{display:flex;align-items:flex-start}.pp-img-main img{width:100%;border-radius:var(--radius);object-fit:cover}
+.pp-imgs-full{margin-top:32px}.pp-imgs-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}.pp-imgs-row img{width:100%;border-radius:var(--radius);object-fit:cover}
 .pp-nav{display:flex;justify-content:space-between;align-items:center;padding:40px clamp(24px,4vw,48px);border-top:1px solid var(--light);max-width:1200px;margin:0 auto}
 .pp-nav-btn{display:flex;align-items:center;gap:10px;background:none;border:none;cursor:pointer;font-family:var(--font);font-size:.82rem;font-weight:600;color:var(--text);transition:all .3s;padding:12px 0}.pp-nav-btn:hover{color:var(--accent)}
 .pp-nav-btn .arr{font-size:1.2rem;transition:transform .3s}.pp-nav-btn:hover .arr-l{transform:translateX(-4px)}.pp-nav-btn:hover .arr-r{transform:translateX(4px)}
@@ -205,8 +204,10 @@ footer{padding:20px clamp(24px,4vw,48px);display:flex;justify-content:space-betw
 <button class="pp-back" onclick="backToMain()">← Retour à la liste des projets</button>
 <div class="pp-body"><div class="pp-grid">
 <div><div class="pp-cat" id="ppCat"></div><h2 class="pp-title" id="ppTitle"></h2><div class="pp-sub" id="ppSub"></div><p class="pp-desc" id="ppDesc"></p><div class="pp-metrics" id="ppMetrics"></div><p class="pp-contrib" id="ppContrib"></p><div class="pp-tags" id="ppTags"></div></div>
-<div class="pp-imgs" id="ppImgs"></div>
-</div></div>
+<div class="pp-img-main" id="ppImgMain"></div>
+</div>
+<div class="pp-imgs-full" id="ppImgsFull"></div>
+</div>
 <div class="pp-nav">
 <button class="pp-nav-btn" onclick="navP(-1)"><span class="arr arr-l">←</span><div><span class="pp-nav-label">Précédent</span><span class="pp-nav-title" id="ppPrevT"></span></div></button>
 <div class="pp-nav-center"><button class="pp-nav-back-btn" onclick="backToMain()">↑ Retour à la liste</button><div class="pp-counter" id="ppCount"></div></div>
@@ -230,7 +231,8 @@ document.getElementById('ppCat').textContent=p.cat;document.getElementById('ppTi
 var sLabel=p.surfLabel||'Envergure';
 document.getElementById('ppMetrics').innerHTML='<div><div class="pp-m-lbl">Rôle</div><div class="pp-m-val">'+p.role+'</div></div><div><div class="pp-m-lbl">'+sLabel+'</div><div class="pp-m-val">'+p.surf+'</div></div><div><div class="pp-m-lbl">Phase</div><div class="pp-m-val">'+p.phase+'</div></div>';
 document.getElementById('ppContrib').innerHTML=p.contrib;document.getElementById('ppTags').innerHTML=p.tags.map(function(t){return '<span>'+t+'</span>'}).join('');
-var imgsHtml='';if(p.imgs.length>0){imgsHtml+='<img class="pp-img-hero" src="'+p.imgs[0]+'" alt="'+p.title+'" loading="lazy">';for(var gi=1;gi<p.imgs.length;gi+=2){imgsHtml+='<div class="pp-imgs-pair">';imgsHtml+='<img src="'+p.imgs[gi]+'" alt="'+p.title+'" loading="lazy">';if(gi+1<p.imgs.length)imgsHtml+='<img src="'+p.imgs[gi+1]+'" alt="'+p.title+'" loading="lazy">';imgsHtml+='</div>';}}document.getElementById('ppImgs').innerHTML=imgsHtml;
+if(p.imgs.length>0){document.getElementById('ppImgMain').innerHTML='<img src="'+p.imgs[0]+'" alt="'+p.title+'" loading="lazy">';}else{document.getElementById('ppImgMain').innerHTML='';}
+var fullHtml='';for(var gi=1;gi<p.imgs.length;gi+=2){fullHtml+='<div class="pp-imgs-row">';fullHtml+='<img src="'+p.imgs[gi]+'" alt="'+p.title+'" loading="lazy">';if(gi+1<p.imgs.length)fullHtml+='<img src="'+p.imgs[gi+1]+'" alt="'+p.title+'" loading="lazy">';fullHtml+='</div>';}document.getElementById('ppImgsFull').innerHTML=fullHtml;
 var prev=(i-1+P.length)%P.length,next=(i+1)%P.length;document.getElementById('ppPrevT').textContent=P[prev].title;document.getElementById('ppNextT').textContent=P[next].title;document.getElementById('ppCount').textContent=(i+1)+' / '+P.length;
 window.scrollTo({top:0,behavior:'instant'})}
 function backToMain(){document.getElementById('projectPage').classList.remove('open');document.getElementById('mainContent').classList.remove('hidden');setTimeout(function(){document.getElementById('projects').scrollIntoView({behavior:'smooth'})},50)}
