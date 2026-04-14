@@ -41,11 +41,12 @@ img{display:block;max-width:100%}a{color:var(--text);text-decoration:none;transi
 .xp-t{font-weight:700;font-size:.95rem}.xp-d{font-size:.72rem;color:var(--accent);font-weight:600;padding:3px 12px;background:rgba(160,82,45,.08);border-radius:var(--radius)}
 .xp-co{font-size:.82rem;color:var(--accent);font-weight:600;margin-bottom:6px}.xp-mission{font-size:.8rem;color:var(--muted);margin-bottom:3px}.xp-mission strong{color:var(--text);font-weight:600}.xp-desc{font-size:.82rem;color:var(--muted);line-height:1.75}.xp-desc ul{margin:8px 0 0 16px;padding:0;list-style:disc}.xp-desc li{margin-bottom:4px}
 .xp-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}.xp-tags span{padding:3px 10px;font-size:.6rem;border:1px solid var(--light);border-radius:var(--radius);color:var(--muted);font-weight:500;transition:all .3s}.xp-tags span:hover{border-color:var(--accent);color:var(--text)}
-.cv-photo{width:100%;object-fit:cover;border-radius:var(--radius);filter:grayscale(15%)}
+.cv-photo{width:100%;max-width:200px;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:var(--radius);filter:grayscale(15%);display:block;margin:0 auto}
 .study{margin-bottom:16px}.study-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:2px}.study-t{font-weight:700;font-size:.88rem}.study-d{font-size:.72rem;color:var(--accent);font-weight:600}.study-sub{font-size:.8rem;color:var(--muted)}
 .comp-list{list-style:none;padding:0;margin:0 0 4px}
 .comp-list li{font-size:.82rem;color:var(--muted);padding:2px 0 2px 14px;position:relative}.comp-list li::before{content:'—';position:absolute;left:0;color:var(--accent)}
 .soft-cat{margin-bottom:18px}.soft-cat-t{font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;margin-top:4px}
+.ref-list{list-style:none;padding:0;margin:0 0 8px}.ref-list li{font-size:.78rem;color:var(--muted);padding:5px 0 5px 14px;position:relative;line-height:1.55}.ref-list li::before{content:'—';position:absolute;left:0;color:var(--accent)}.ref-list a{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--light);transition:color .3s,border-color .3s}.ref-list a:hover{color:var(--accent);border-bottom-color:var(--accent)}
 .logo-grid{display:flex;flex-wrap:wrap;gap:10px 12px}
 .logo-item{display:flex;flex-direction:column;align-items:center;gap:4px;width:44px}
 .logo-item img{width:36px;height:36px;object-fit:contain;border-radius:6px}
@@ -120,7 +121,7 @@ footer{padding:20px clamp(24px,4vw,48px);display:flex;justify-content:space-betw
 @media(min-width:768px){.cv-grid{grid-template-columns:1fr 1fr 240px}.contact-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.pp-grid{grid-template-columns:1fr}}
 @media(min-width:1024px){.cv-grid{grid-template-columns:1fr 1.2fr 260px;gap:56px}}
-@media(max-width:767px){.cv-photo{max-height:380px}.p-slide{width:80vw}.pp-metrics{grid-template-columns:1fr 1fr 1fr}.c-form-row{grid-template-columns:1fr}.pp-nav{flex-wrap:wrap;gap:20px;justify-content:center}}
+@media(max-width:767px){.cv-photo{max-width:180px;max-height:none}.p-slide{width:80vw}.pp-metrics{grid-template-columns:1fr 1fr 1fr}.c-form-row{grid-template-columns:1fr}.pp-nav{flex-wrap:wrap;gap:20px;justify-content:center}}
 </style>
 </head>
 <body>
@@ -192,9 +193,24 @@ footer{padding:20px clamp(24px,4vw,48px);display:flex;justify-content:space-betw
 </div>
 </div>
 
+<div class="sec-h">Travaux académiques</div>
+<ul class="ref-list">
+<li><a href="https://drive.google.com/drive/folders/1p8gE2x1FlfpCkx9e7oHc7UBAi8GNeoLF" target="_blank" rel="noopener">Le BIM comme processus d'acquisition numérique du patrimoine bâti — Cas d'étude bâtiment B15, Pachacamac, Pérou</a></li>
+<li><a href="https://www.youtube.com/watch?v=tMvAHTdzkrk&t=641s" target="_blank" rel="noopener">Reconstitution de l'aménagement du Palais V — Expo 58, Léon Stynen</a></li>
+</ul>
+
+<div class="sec-h">Certifications</div>
+<ul class="ref-list">
+<li><a href="https://www.udemy.com/certificate/UC-d4fef808-f23f-4997-8a1f-8e4b17018c67/" target="_blank" rel="noopener">Revit MEP Beginners to Advanced (Contractor services)</a></li>
+<li><a href="https://www.udemy.com/certificate/UC-f671e09c-0483-453d-b7d6-01bcb850f273/" target="_blank" rel="noopener">Dynamo BIM from Zero to Hero</a></li>
+<li><a href="https://drive.google.com/drive/folders/1rEzBQXFSuE-rUo6uSlSLIqiA52CvEo4Y" target="_blank" rel="noopener">Initiation Python 3</a></li>
+<li><a href="https://www.udemy.com/certificate/UC-c49cb0ad-2d8c-4e25-acca-ff303682793f/" target="_blank" rel="noopener">Python &amp; Revit API for Dynamo BIM</a></li>
+<li><a href="https://www.udemy.com/certificate/UC-997f0f23-22a9-4d34-8636-27171874c7ba/" target="_blank" rel="noopener">Python for Revit — Building Custom Tools</a></li>
+</ul>
+
 </div>
 <div class="rv"><div class="sec-h">expérience</div><div class="xp"><div class="xp-head"><span class="xp-t">Consultant BIM et Synthèse TCE</span><span class="xp-d">Août 2025 — Présent</span></div><div class="xp-co">Azaléo, Paris</div><div class="xp-mission"><strong>Mission :</strong> Responsable de synthèse BIM — TCE chez CAPINGELEC, Chartres</div><div class="xp-mission"><strong>Projet :</strong> Extension de l'usine NOVONORDISK NNP6 · <strong>Budget :</strong> 1 Md€ · <strong>Phases :</strong> EXE, DOE</div><div class="xp-desc"><ul><li>Coordination interdisciplinaire entre les différents lots techniques et architecturaux en parallèle avec le planning des travaux</li><li>Pilotage des réunions et workshops de synthèse en Fast Track</li><li>Détection, analyse et suivi des clashs via BIM Track</li><li>Proposition de solutions techniques et architecturales</li><li>Production des documents associés : carnets de détails, plans de calepinage, gestion des réservations GOE et SOE</li><li>Contrôle TQC : comparaison Nuage de Points / Maquette EXE et analyse des écarts</li><li>Développement de solutions d'automatisation (Dynamo, pyRevit, IFC Checker APP)</li></ul></div><div class="xp-tags"><span>Revit</span><span>Navisworks</span><span>BIM Track</span><span>Dynamo</span><span>pyRevit</span><span>Synthèse TCE</span></div></div><div class="xp"><div class="xp-head"><span class="xp-t">BIM Manager</span><span class="xp-d">Oct 2022 — Mai 2025</span></div><div class="xp-co">Fast Forward Architects & Engineers, Bruxelles</div><div class="xp-mission"><strong>Missions :</strong></div><div class="xp-desc"><ul><li>Responsable de déploiement BIM</li><li>Management des projets BIM</li><li>Synthèse technique et architecturale</li><li>Développement et optimisation des workflows de modélisation, coordination et Scan to BIM (construction neuve / rénovation lourde)</li><li>Rédaction des protocoles : conventions de modélisation, BEP, cahier des charges sous-traitants Scan to BIM</li><li>Formation et accompagnement des équipes</li><li>Développement des bibliothèques et gabarits pour tous les corps d'états</li><li>Open BIM — IFC (normes BELUX, mapping IFC, intégration des données d'exploitation)</li></ul></div><div class="xp-mission"><strong>Projets :</strong></div><div class="xp-desc"><ul><li>École IEHS EL HIKMA — 22 000 m², 45 M€, APD DCE EXE</li><li>Hôpital AZ ZENO Blankenberge Aile E — 10 000 m², EXE</li><li>BACARDI — projet mixte, 7 900 m², APS APD PC</li><li>Contrat cadre Ministère de la Défense Belge — projets divers, toutes phases (intégration données d'exploitation)</li><li>REGENT 45 — bureaux certifiés BREEAM, 7 600 m², 10 M€, APD DCE EXE</li><li>BARTHELEMY — 17 appartements, 1 800 m², APD DCE</li></ul></div><div class="xp-tags"><span>Revit</span><span>IFC</span><span>Scan to BIM</span><span>Convention BIM</span><span>BEP</span><span>Open BIM</span></div></div><div class="xp"><div class="xp-head"><span class="xp-t">Architecte BIM</span><span class="xp-d">Juin 2020 — Sept 2021</span></div><div class="xp-co">MetaForma Architettura, Bruxelles</div><div class="xp-desc">Études et suivi de chantier, conception architecturale et design d'intérieur, métrés, estimation budgétaire, rédaction des cahiers des charges.</div><div class="xp-tags"><span>Revit</span><span>AutoCAD</span><span>Conception</span><span>Suivi chantier</span></div></div><div class="xp"><div class="xp-head"><span class="xp-t">Architecte Gérant</span><span class="xp-d">Nov 2012 — Août 2017</span></div><div class="xp-co">Elite Architecture Studio, Algérie</div><div class="xp-desc">Gestion des études techniques et architecturales, concours d'architecture, dossiers d'exécution, suivi de chantiers. Projets publics : logements, bureaux de poste, aménagements urbains.</div><div class="xp-tags"><span>Architecture</span><span>Études techniques</span><span>Chantiers</span><span>Concours</span></div></div><div class="xp"><div class="xp-head"><span class="xp-t">Architecte Stagiaire</span><span class="xp-d">Sept 2010 — Sept 2012</span></div><div class="xp-co">Atelier New Concept, Algérie</div><div class="xp-desc">Concours et études de projets divers (logements collectifs, bureaux), permis de construire, exécution et suivi de chantier.</div><div class="xp-tags"><span>Architecture</span><span>Permis de construire</span><span>Suivi chantier</span></div></div></div>
-<div class="rv"><img src="https://picsum.photos/300/460?random=90" alt="Walid Daira" class="cv-photo" loading="lazy"></div>
+<div class="rv"><img src="photo_cv/cv.jpg" alt="Walid Daira" class="cv-photo" loading="lazy"></div>
 </div></section>
 
 
